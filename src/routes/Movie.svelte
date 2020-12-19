@@ -1,20 +1,21 @@
 <script>
   import Loader from '~/components/Loader.svelte'
-  import { searchMovieWithId, theMovie, loading } from "~/store/movie";
+  import { searchMovieWithId, theMovie, loading } from '~/store/movie'
 
-  let imageLoading = true;
+  let imageLoading = true
+
   export let params = {}
 
   searchMovieWithId(params.id)
 
   function requestDifferentSizeImage(url, size = 700) {
-    const src = url.replace('SX300', `SX${size}`);
-    const img = document.createElement('img');
-    img.src = src;
+    const src = url.replace('SX300', `SX${size}`)
+    const img = document.createElement('img')
+    img.src = src
     img.addEventListener('load', () => {
-      imageLoading = false;
+      imageLoading = false
     })
-    return src;
+    return src
   }
 </script>
 
@@ -34,11 +35,13 @@
     </div>
   {:else}
     <div class="movie-details">
-      <div class="poster"
-        style="background-image: url({requestDifferentSizeImage($theMovie.Poster)});">
+      <div
+        style="background-image: url({requestDifferentSizeImage($theMovie.Poster)});"
+        class="poster">
         {#if imageLoading}
-          <Loader scale=".7"
-                  absolute />
+          <Loader
+            scale=".7"
+            absolute />
         {/if}
       </div>
       <div class="specs">
@@ -50,33 +53,36 @@
             {$theMovie.Released}
           </span>
           <span class="dot">·</span>
-          <spen>
+          <span>
             {$theMovie.Runtime}
-          </spen>
+          </span>
           <span class="dot">·</span>
-          <spen>
+          <span>
             {$theMovie.Country}
-          </spen>
+          </span>
         </div>
         <div class="plot">
           {$theMovie.Plot}
         </div>
+
         <div class="ratings">
           <h3>Ratings</h3>
           <div class="rating-wrap">
             {#each $theMovie.Ratings as rating (rating.Source)}
-              <div class="rating"
-                   title={rating.Source}>
-                <img src={`/assets/${rating.Source}.png`}
+              <div
+                title={rating.Source}
+                class="rating">
+                <img
+                  src="/assets/{rating.Source}.png"
                   alt={rating.Source}
-                  height="30"/>
+                  height="30" />
                 <span>{rating.Value}</span>
               </div>
             {/each}
           </div>
         </div>
         <div>
-          <h3>Action</h3>
+          <h3>Actors</h3>
           {$theMovie.Actors}
         </div>
         <div>
@@ -130,6 +136,7 @@
           height: 50px;
         }
       }
+
     }
   }
   .movie-details {
@@ -140,15 +147,15 @@
     }
   }
   .poster {
-    flex-shrink: 0; // 줄어드는값의 비율(영향없음)
+    flex-shrink: 0;
     width: 500px;
     height: 500px * 3/2;
     border-radius: 10px;
     margin-right: 70px;
-    background-color: $color--area;
     background-position: center;
     background-size: cover;
     position: relative;
+    background-color: $color--area;
     @media #{$tablet} {
       width: 300px;
       height: 300px * 3/2;

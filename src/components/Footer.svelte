@@ -5,7 +5,7 @@
         </a>
     </div>
     <div>
-        <a href="">
+        <a href="#none">
             @{new Date().getFullYear()} HEROPY
         </a>
     </div>

@@ -1,7 +1,7 @@
 <script>
-    import {movies, loading, message} from "~/store/movie";
-    import MovieCard from "~/components/MovieCard.svelte";
-    import Loader from "~/components/Loader.svelte";
+    import {movies, loading, message} from '~/store/movie';
+    import MovieCard from '~/components/MovieCard.svelte';
+    import Loader from '~/components/Loader.svelte';
 </script>
 
 <div class="movie-list"

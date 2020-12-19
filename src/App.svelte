@@ -1,9 +1,11 @@
 <script>
-  import {fade} from 'svelte/transition';
-  import Router, {location} from 'svelte-spa-router';
-  import routes from '~/routes';
-  import Footer from '~/components/Footer.svelte';
-  import Header from '~/components/Header.svelte';
+  import { fade } from 'svelte/transition'
+  import Router, { location } from 'svelte-spa-router'
+  // import routes from '~/routes/index.js'
+  import routes from '~/routes'
+  import Header from '~/components/Header.svelte'
+  import Footer from '~/components/Footer.svelte'
+  console.log($location)
 </script>
 
 <Header />
@@ -11,7 +13,7 @@
   <div in:fade>
     <Router
       {routes}
-      restoreScrollState={true}/>
+      restoreScrollState={true} />
   </div>
 {/key}
 <Footer />

@@ -116,9 +116,9 @@
         font-family: 'Oswald', sans-serif;
         position: relative;
         color: $color--white;
-        overflow: hidden; // 타이틀이 길어져서 넘치는것을 방지함
-        text-overflow: ellipsis; // 텍스트가 넘치면 ... 표현
-        white-space: nowrap; // 줄바꿈처리를 안함
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
     }
   }

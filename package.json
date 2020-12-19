@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "snowpack dev",
-    "dev:netlify": "netlify dev",
+    "dev": "netlify dev",
+    "dev:snowpack": "snowpack dev",
     "build": "snowpack build"
   },
   "keywords": [],

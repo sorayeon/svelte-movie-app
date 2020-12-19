@@ -1,7 +1,7 @@
 const axios = require('axios');
 const {OMDB_API_KEY} = process.env;
 
-exports.handler = async function(event, context) {
+exports.handler = async function(event) {
   const params = JSON.parse(event.body);
   const {title, type, year, page, id} = params;
 
@@ -10,20 +10,19 @@ exports.handler = async function(event, context) {
     : `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${title}&type=${type}&y=${year}&page=${page}`;
 
   try {
-    const res = await axios.get(url);
-    console.log(res.data);
-    if(res.data.Error) {
+    const {data} = await axios.get(url);
+    console.log(data);
+    if(data.Error) {
       return {
         statusCode: 400,
-        body: res.data.Error
+        body: data.Error
       };
     }
     return {
       statusCode: 200,
-      body: JSON.stringify(res.data)
+      body: JSON.stringify(data)
     };
   } catch (error) {
-    console.log(error.response.status);
     return {
       statusCode: error.response.status,
       body: error.message

@@ -1,7 +1,8 @@
-# gitignore.io
+# Created by https://www.toptal.com/developers/gitignore/api/webstorm,vscode,dotenv,node
+# Edit at https://www.toptal.com/developers/gitignore?templates=webstorm,vscode,dotenv,node
 
-# Created by https://www.toptal.com/developers/gitignore/api/vscode,webstorm,node,dotenv
-# Edit at https://www.toptal.com/developers/gitignore?templates=vscode,webstorm,node,dotenv
+build/
+.idea
 
 ### dotenv ###
 .env
@@ -44,7 +45,6 @@ bower_components
 .lock-wscript
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
-build/
 build/Release
 
 # Dependency directories
@@ -130,7 +130,6 @@ dist
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff
-.idea/
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/**/usage.statistics.xml
@@ -229,4 +228,4 @@ fabric.properties
 # https://plugins.jetbrains.com/plugin/12206-codestream
 .idea/codestream.xml
 
-# End of https://www.toptal.com/developers/gitignore/api/vscode,webstorm,node,dotenv
+# End of https://www.toptal.com/developers/gitignore/api/webstorm,vscode,dotenv,node

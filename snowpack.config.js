@@ -27,6 +27,6 @@ module.exports = {
   },
   devOptions: {
     open: 'none',
-    port: 8079
+    port: 8080
   }
 }

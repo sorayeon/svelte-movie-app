@@ -24,9 +24,5 @@ module.exports = {
   ],
   alias: {
     '~': './src'
-  },
-  devOptions: {
-    open: 'none',
-    port: 8080
   }
 }

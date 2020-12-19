@@ -3,11 +3,11 @@
   import qs from 'qs'
 
   $: query = qs.parse($querystring)
-  $: name = query.name || 'Heropy'
-  $: email = query.email || 'thesecon@gmail.com'
-  $: blog = query.blog || 'https://heropy.blog'
+  $: name = query.name || 'sorayeon'
+  $: email = query.email || 'jihwan77@gmail.com'
+  $: blog = query.blog || 'https://blog.naver.com'
   $: phone = query.phone || '+82-10-1234-5678'
-  $: image = query.image || 'https://heropy.blog/css/images/logo.png'
+  $: image = query.image || '/assets/netlify.png'
 </script>
 
 <div class="user-profile">

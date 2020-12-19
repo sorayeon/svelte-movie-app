@@ -1,11 +1,11 @@
 <footer>
   <div>
-    <a href="https://github.com/HeropCode/Svelte-Movie-app">
+    <a href="https://github.com/sorayeon/svelte-movie-app">
       GitHub Repo.
     </a>
   </div>
   <div>
-    <a href="https://heropy.blog/2019/09/29/svelte/">
+    <a href="#none">
       @{new Date().getFullYear()}
       HEROPY
     </a>

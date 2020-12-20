@@ -8,14 +8,20 @@
 
   searchMovieWithId(params.id)
 
+  // 영화 포스터가 없는 경우 값으로 'N/A'가 반환됨.
   function requestDifferentSizeImage(url, size = 700) {
-    const src = url.replace('SX300', `SX${size}`)
-    const img = document.createElement('img')
-    img.src = src
-    img.addEventListener('load', () => {
+    if (url === 'N/A') {
       imageLoading = false
-    })
-    return src
+      return url
+    } else {
+      const src = url.replace('SX300', `SX${size}`)
+      const img = document.createElement('img')
+      img.src = src
+      img.addEventListener('load', () => {
+        imageLoading = false
+      })
+      return src
+    }
   }
 </script>
 
@@ -42,6 +48,10 @@
           <Loader
             scale=".7"
             absolute />
+        {/if}
+        {#if $theMovie.Poster === 'N/A'}
+          OMDbAPI<br />
+          N/A
         {/if}
       </div>
       <div class="specs">
@@ -147,6 +157,7 @@
     }
   }
   .poster {
+    display: flex;
     flex-shrink: 0;
     width: 500px;
     height: 500px * 3/2;
@@ -156,6 +167,12 @@
     background-size: cover;
     position: relative;
     background-color: $color--area;
+    font-family: 'Oswald', sans-serif;
+    color: $color--white-5;
+    font-size: 60px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
     @media #{$tablet} {
       width: 300px;
       height: 300px * 3/2;
